@@ -1,0 +1,12 @@
+
+<h1>Registros</h1>
+<a href="{% url 'crear_registro' %}">Crear Nuevo Registro</a>
+<ul>
+    {% for registro in registros %}
+    <li>
+        {{ registro.nombre }} - {{ registro.descripcion }}
+        <a href="{% url 'editar_registro' registro.id %}">Editar</a>
+        <a href="{% url 'eliminar_registro' registro.id %}">Eliminar</a>
+    </li>
+    {% endfor %}
+</ul>
